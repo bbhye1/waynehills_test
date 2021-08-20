@@ -2,6 +2,7 @@
 
 const images = {
   logo: '',
+  shutterstockLogo: '',
 };
 
 export default images;
