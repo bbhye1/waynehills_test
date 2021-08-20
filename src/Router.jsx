@@ -10,7 +10,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route path={['/', '/ttv/home']} component={HomePage} />
       </Switch>
     </BrowserRouter>
   );
