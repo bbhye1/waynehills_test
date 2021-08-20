@@ -2,16 +2,18 @@ import { Link } from 'react-router-dom';
 
 import styled from '@emotion/styled';
 
+import { styles } from '../designSystem';
+
 import images from './assets';
 
 const Container = styled.header({
+  ...styles.center,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
   margin: '8px auto',
   padding: '8px',
-  maxWidth: '1260px',
   boxShadow: '0 3px 1px -2px #0003, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f',
 });
 
