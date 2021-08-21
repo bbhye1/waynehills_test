@@ -7,13 +7,26 @@ import HomePage from './HomePage';
 jest.mock('./assets');
 
 describe('HomePage', () => {
-  it('renders Header', () => {
-    const { container } = render((
+  function renderHomePage() {
+    return render((
       <MemoryRouter>
         <HomePage />
       </MemoryRouter>
     ));
+  }
+  it('renders Header', () => {
+    const { container } = renderHomePage();
 
     expect(container).toHaveTextContent('Sign in');
+  });
+
+  it('renders SSV section', () => {
+    const { container } = renderHomePage();
+
+    const steps = ['Scripting', 'Matching videos', 'Encoding'];
+
+    steps.forEach((step) => {
+      expect(container).toHaveTextContent(step);
+    });
   });
 });

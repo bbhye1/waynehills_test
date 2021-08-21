@@ -3,6 +3,7 @@
 const images = {
   logo: '',
   shutterstockLogo: '',
+  stepsWrapper: '',
 };
 
 export default images;
