@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -7,18 +7,24 @@ import Footer from './Footer';
 jest.mock('./assets');
 
 describe('Footer', () => {
+  const handleClick = jest.fn();
+
   function renderFooter() {
     return render((
       <MemoryRouter>
-        <Footer />
+        <Footer
+          onOpenModal={handleClick}
+        />
       </MemoryRouter>
     ));
   }
 
-  it('renders Terms of Use button', () => {
-    const { container } = renderFooter();
+  it('renders Terms of Use button and listens click event', () => {
+    const { getByText } = renderFooter();
 
-    expect(container).toHaveTextContent('Terms of Use');
+    fireEvent.click(getByText('Terms of Use'));
+
+    expect(handleClick).toBeCalled();
   });
 
   it('renders company informations', () => {

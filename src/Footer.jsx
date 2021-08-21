@@ -54,11 +54,7 @@ const Information = styled.div({
   },
 });
 
-export default function Footer() {
-  const handleClick = () => {
-    // TODO: open Terms of Use modal
-  };
-
+export default function Footer({ onOpenModal }) {
   return (
     <Container>
       <Top>
@@ -73,7 +69,7 @@ export default function Footer() {
         <TermsOfUse>
           <button
             type="button"
-            onClick={handleClick}
+            onClick={onOpenModal}
           >
             Terms of Use
           </button>
