@@ -14,6 +14,7 @@ describe('HomePage', () => {
       </MemoryRouter>
     ));
   }
+
   it('renders Header', () => {
     const { container } = renderHomePage();
 
@@ -28,5 +29,11 @@ describe('HomePage', () => {
     steps.forEach((step) => {
       expect(container).toHaveTextContent(step);
     });
+  });
+
+  it('renders Footer', () => {
+    const { container } = renderHomePage();
+
+    expect(container).toHaveTextContent('Terms of Use');
   });
 });
