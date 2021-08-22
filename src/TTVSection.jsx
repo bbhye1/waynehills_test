@@ -69,7 +69,7 @@ export default function TTVSection({ onOpenSignIn }) {
     <>
       <Top>
         <img
-          src={images.stepsWrapper}
+          src={images.background.stepsWrapper}
           alt="steps wrapper"
         />
       </Top>
@@ -93,7 +93,7 @@ export default function TTVSection({ onOpenSignIn }) {
       </StepsContainer>
       <Bottom>
         <img
-          src={images.stepsWrapper}
+          src={images.background.stepsWrapper}
           alt="steps wrapper"
         />
       </Bottom>

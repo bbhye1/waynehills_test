@@ -45,7 +45,7 @@ export default function Header({ onOpenSignIn }) {
     <Container>
       <Logo>
         <Link to="/ttv/home">
-          <img src={images.logo} alt="logo" />
+          <img src={images.logos.logo} alt="logo" />
         </Link>
       </Logo>
       <Button
