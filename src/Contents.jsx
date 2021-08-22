@@ -62,13 +62,14 @@ disabled ? {
 } : {},
 ]);
 
-export default function Contents({ open }) {
+export default function Contents({ open, onOpenSignIn }) {
   const [text, setText] = useState('');
   const [valid, isValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    onOpenSignIn();
     // TODO: convert text to video
   };
 

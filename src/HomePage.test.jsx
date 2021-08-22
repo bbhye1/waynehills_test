@@ -36,4 +36,16 @@ describe('HomePage', () => {
 
     expect(container).toHaveTextContent('Terms of Use');
   });
+
+  it('renders sign in modal', () => {
+    const { getByText } = renderHomePage();
+
+    expect(getByText('Login')).toBeInTheDocument();
+  });
+
+  it('renders terms of use modal', () => {
+    const { getByText } = renderHomePage();
+
+    expect(getByText('Shutterstock')).toBeInTheDocument();
+  });
 });

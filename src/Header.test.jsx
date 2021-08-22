@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -7,10 +7,12 @@ import Header from './Header';
 jest.mock('./assets');
 
 describe('Header', () => {
+  const handleClick = jest.fn();
+
   function renderHeader() {
     return render((
       <MemoryRouter>
-        <Header />
+        <Header onOpenSignIn={handleClick} />
       </MemoryRouter>
     ));
   }
@@ -21,9 +23,11 @@ describe('Header', () => {
     expect(getByAltText('logo')).not.toBeNull();
   });
 
-  it('renders sign in button', () => {
-    const { container } = renderHeader();
+  it('renders sign in button and listens click event', () => {
+    const { getByText } = renderHeader();
 
-    expect(container).toHaveTextContent('Sign in');
+    fireEvent.click(getByText('Sign in'));
+
+    expect(handleClick).toBeCalled();
   });
 });

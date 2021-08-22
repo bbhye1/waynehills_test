@@ -42,7 +42,7 @@ const Button = styled.button({
   cursor: 'pointer',
 });
 
-export default function SignIn({ open, onClickOutside }) {
+export default function TermsOfUse({ open, onClickOutside }) {
   const handleCloseModal = () => {
     onClickOutside();
   };
