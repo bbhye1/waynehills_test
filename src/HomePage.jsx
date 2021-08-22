@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
+import SignIn from './SignIn';
+import TermsOfUse from './TermsOfUse';
 import Header from './Header';
+import IntroductionSection from './IntroductionSection';
 import TTVSection from './TTVSection';
 import Footer from './Footer';
-import TermsOfUse from './TermsOfUse';
-import SignIn from './SignIn';
 
 export default function HomePage() {
   const [signInOpen, setSignInOpen] = useState(false);
@@ -37,6 +38,7 @@ export default function HomePage() {
         onClickOutside={handleCloseTermsOfUse}
       />
       <Header onOpenSignIn={handleOpenSignIn} />
+      <IntroductionSection />
       <TTVSection onOpenSignIn={handleOpenSignIn} />
       <Footer onOpenTermsOfUse={handleOpenTermsOfUse} />
     </>

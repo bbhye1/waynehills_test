@@ -60,7 +60,7 @@ export default function Footer({ onOpenTermsOfUse }) {
       <Top>
         powered by
         <img
-          src={images.shutterstockLogo}
+          src={images.logos.shutterstockLogo}
           alt="Shutterstock logo"
         />
       </Top>

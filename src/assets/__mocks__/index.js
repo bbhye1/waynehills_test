@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
 
 const images = {
-  logo: '',
-  shutterstockLogo: '',
-  stepsWrapper: '',
+  logos: {},
+  icons: {},
+  background: {},
 };
 
 export default images;
