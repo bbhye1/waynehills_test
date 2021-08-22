@@ -36,6 +36,7 @@ const Step = styled.div({
     color: '#000000de',
   },
 });
+
 const Title = styled.div({
   padding: '24px',
 });
@@ -45,7 +46,7 @@ const Bottom = styled.div({
   transform: 'scaleY(-1) translateY(1px)',
 });
 
-export default function TTVSection() {
+export default function TTVSection({ onOpenSignIn }) {
   const steps = [
     {
       step: 1,
@@ -84,6 +85,7 @@ export default function TTVSection() {
               </Title>
               <Contents
                 open={open}
+                onOpenSignIn={onOpenSignIn}
               />
             </Step>
           )))}

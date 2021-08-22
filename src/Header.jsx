@@ -40,11 +40,7 @@ const Button = styled.button({
   cursor: 'pointer',
 });
 
-export default function Header() {
-  const handleClick = () => {
-    // todo: open sign in modal
-  };
-
+export default function Header({ onOpenSignIn }) {
   return (
     <Container>
       <Logo>
@@ -54,7 +50,7 @@ export default function Header() {
       </Logo>
       <Button
         type="button"
-        onClick={handleClick}
+        onClick={onOpenSignIn}
       >
         Sign in
       </Button>

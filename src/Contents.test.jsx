@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -7,10 +7,15 @@ import Contents from './Contents';
 jest.mock('./assets');
 
 describe('Contents', () => {
+  const handleSubmit = jest.fn();
+
   function renderContents() {
     return render((
       <MemoryRouter>
-        <Contents open={given.open} />
+        <Contents
+          open={given.open}
+          onOpenSignIn={handleSubmit}
+        />
       </MemoryRouter>
     ));
   }
@@ -29,6 +34,19 @@ describe('Contents', () => {
       const { queryByText } = renderContents();
 
       expect(queryByText('Convert')).not.toBeNull();
+    });
+
+    it('listens onchange and submit event', () => {
+      const { queryByPlaceholderText, getByText } = renderContents();
+
+      fireEvent.change(
+        queryByPlaceholderText('Put your script here 500~5,000 letters.'),
+        { target: { value: 'Sometiog...'.repeat(500) } },
+      );
+
+      fireEvent.submit(getByText('Convert'));
+
+      expect(handleSubmit).toBeCalled();
     });
   });
 });

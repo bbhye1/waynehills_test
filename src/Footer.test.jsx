@@ -13,7 +13,7 @@ describe('Footer', () => {
     return render((
       <MemoryRouter>
         <Footer
-          onOpenModal={handleClick}
+          onOpenTermsOfUse={handleClick}
         />
       </MemoryRouter>
     ));

@@ -54,7 +54,7 @@ const Information = styled.div({
   },
 });
 
-export default function Footer({ onOpenModal }) {
+export default function Footer({ onOpenTermsOfUse }) {
   return (
     <Container>
       <Top>
@@ -69,7 +69,7 @@ export default function Footer({ onOpenModal }) {
         <TermsOfUse>
           <button
             type="button"
-            onClick={onOpenModal}
+            onClick={onOpenTermsOfUse}
           >
             Terms of Use
           </button>
